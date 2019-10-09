@@ -1,0 +1,33 @@
+{
+  "name": "ostoslista-rest",
+  "version": "1.0.0",
+  "description": "REST API for a school Angular Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Limenie/Angular-Project.git"
+  },
+  "keywords": [
+    "angular",
+    "school",
+    "node",
+    "rest"
+  ],
+  "author": "Olli Asikainen & Niina Harja",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Limenie/Angular-Project/issues"
+  },
+  "homepage": "https://github.com/Limenie/Angular-Project#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.17.1"
+  }
+}
