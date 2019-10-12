@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {MatListModule} from '@angular/material/list'
 
 @Component({
   selector: 'app-root',
@@ -7,5 +6,6 @@ import {MatListModule} from '@angular/material/list'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'projekti';
+  title = 'angular8tutorial';
 }
+export class ListOverviewExample {}

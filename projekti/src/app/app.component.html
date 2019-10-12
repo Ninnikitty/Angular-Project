@@ -6,30 +6,24 @@
 
 <div class="content" role="main">
   <!-- Resources -->
-  <h2>Resources</h2>
-  <p>Insert here what kind of thing you have to buy from shop:</p>
-<div class="">
+  <h2><u>Shopping list:</u></h2>
+  <h3>Insert here what kind of thing you have to buy from shop:</h3>
+
+<div>
     <form class="example-form">
           <input matInput placeholder="Favorite food">
       </form>
-      <button (click)="onClickMe()">Add</button>
+      <div class="card-container">
+          <div class="card card-small" (click)="onClickMe()">
+              <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            <span>Add new thing</span>
+          </div>
+        </div>
 </div>
 
-<!-- Check list-->
-<div class="checklist-model">
-
+<div>
+  
 </div>
-
-  <!-- Carcontainer -->
-  <div class="card-container">
-    <div class="card card-small" (click)="selection.value = 'component'" tabindex="0">
-        <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-
-      <span>New Component</span>
-    </div>
-
-  </div>
-
 
   <!-- Footer -->
   <footer>
@@ -47,6 +41,5 @@
   <div class="madeby">
     Made by Olli Asikainen and Niina Harja
   </div>
-
 </div>
 <router-outlet></router-outlet>
