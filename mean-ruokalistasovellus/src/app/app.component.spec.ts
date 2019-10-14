@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'projekti'`, () => {
+  it(`should have as title 'mean-ruokalistasovellus'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('projekti');
+    expect(app.title).toEqual('mean-ruokalistasovellus');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('projekti app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('mean-ruokalistasovellus app is running!');
   });
 });
