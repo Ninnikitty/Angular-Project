@@ -37,7 +37,7 @@ export class FoodListComponent implements OnInit {
     var food: Food = {
       name: ''
     };
-    this.selectFood(food); // By default, a newly-created contact will have the selected state.
+    this.selectFood(food); // By default, a newly-created food will have the selected state.
   }
 
   deleteFood = (foodId: String) => {

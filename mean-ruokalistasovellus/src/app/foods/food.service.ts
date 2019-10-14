@@ -23,8 +23,8 @@ constructor (private http: Http) {}
   }
 
   // post("/api/foods")
-  createFood(newContact: Food): Promise<void | Food> {
-    return this.http.post(this.foodsUrl, newContact)
+  createFood(newFood: Food): Promise<void | Food> {
+    return this.http.post(this.foodsUrl, newFood)
                .toPromise()
                .then(response => response.json() as Food)
                .catch(this.handleError);
@@ -32,7 +32,7 @@ constructor (private http: Http) {}
 
   // get("/api/foods/:id") endpoint not used by Angular app
 
-  // delete("/api/contacts/:id")
+  // delete("/api/foods/:id")
   deleteFood(delFoodId: String): Promise<void | String> {
     return this.http.delete(this.foodsUrl + '/' + delFoodId)
                .toPromise()

@@ -10,7 +10,7 @@ import { ContactService } from '../food.service';
 
 export class FoodDetailsComponent {
   @Input()
-  contact: Food;
+  food: Food;
   @Input()
   createHandler: Function;
   @Input()
