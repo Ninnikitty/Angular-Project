@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Food } from './food';
-import { Http, Response } from '@angular/http';
+import { Http, Response } from '@angular/Http';
 
 @Injectable({
   providedIn: 'root'
