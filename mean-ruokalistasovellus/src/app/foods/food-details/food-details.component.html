@@ -1,0 +1,18 @@
+<div *ngIf="food" class="row">
+    <div class="col-md-12">
+      <h2 *ngIf="food._id">Grocery Details</h2>
+      <h2 *ngIf="!food._id">New Grocery</h2>
+    </div>
+  </div>
+  <div *ngIf="food" class="row">
+    <form class="col-md-12">
+      <div class="form-group">
+        <label for="food-name">Name</label>
+        <input class="form-control" name="food-name" [(ngModel)]="food.name" placeholder="Grocery"/>
+      </div>
+      <button class="btn btn-primary" *ngIf="!food._id" (click)="createFood(food)">Create</button>
+      <button class="btn btn-info" *ngIf="food._id" (click)="updateFood(food)">Update</button>
+      <button class="btn btn-danger" *ngIf="food._id" (click)="deleteFood(food._id)">Delete</button>
+    </form>
+  </div>
+  
