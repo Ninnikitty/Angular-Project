@@ -1,7 +1,7 @@
 <div *ngIf="food" class="row">
     <div class="col-md-12">
-      <h2 *ngIf="food._id">Grocery Details</h2>
-      <h2 *ngIf="!food._id">New Grocery</h2>
+      <h2 *ngIf="food.getId()">Grocery Details</h2>
+      <h2 *ngIf="!food.getId()">New Grocery</h2>
     </div>
   </div>
   <div *ngIf="food" class="row">
@@ -10,9 +10,9 @@
         <label for="food-name">Name</label>
         <input class="form-control" name="food-name" [(ngModel)]="food.name" placeholder="Grocery"/>
       </div>
-      <button class="btn btn-primary" *ngIf="!food._id" (click)="createFood(food)">Create</button>
-      <button class="btn btn-info" *ngIf="food._id" (click)="updateFood(food)">Update</button>
-      <button class="btn btn-danger" *ngIf="food._id" (click)="deleteFood(food._id)">Delete</button>
+      <button class="btn btn-primary" *ngIf="!food.getId()" (click)="createFood(food)">Create</button>
+      <button class="btn btn-info" *ngIf="food.getId()" (click)="updateFood(food)">Update</button>
+      <button class="btn btn-danger" *ngIf="food.getId()" (click)="deleteFood(food._id)">Delete</button>
     </form>
   </div>
   

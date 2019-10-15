@@ -6,14 +6,13 @@ import { FoodDetailsComponent } from '../food-details/food-details.component';
 @Component({
   selector: 'food-list',
   templateUrl: './food-list.component.html',
-  styleUrls: ['./food-list.component.css'],
   providers: [ContactService]
 })
 
 export class FoodListComponent implements OnInit {
 
-  foods: Food[]
-  selectedFood: Food
+  foods: Food[];
+  selectedFood: Food;
 
   constructor(private contactService: ContactService) { }
 
@@ -23,25 +22,24 @@ export class FoodListComponent implements OnInit {
       .then((foods: Food[]) => {return foods;});
   }
 
-  private getIndexOfFood = (foodId: String) => {
+  private getIndexOfFood = (foodId: string) => {
     return this.foods.findIndex((food) => {
-      return food._id === foodId;
+      return food.getId() === foodId;
     });
   }
 
   selectFood(food: Food) {
-    this.selectedFood = food
+    this.selectedFood = food;
   }
 
   createNewFood() {
-    var food: Food = {
-      name: ''
-    };
+    const food: Food = new Food();
+    food.setName('');
     this.selectFood(food); // By default, a newly-created food will have the selected state.
   }
 
-  deleteFood = (foodId: String) => {
-    var idx = this.getIndexOfFood(foodId);
+  deleteFood = (foodId: string) => {
+    const idx = this.getIndexOfFood(foodId);
     if (idx !== -1) {
       this.foods.splice(idx, 1);
       this.selectFood(null);
@@ -56,7 +54,7 @@ export class FoodListComponent implements OnInit {
   }
 
   updateFood = (food: Food) => {
-    var idx = this.getIndexOfFood(food._id);
+    const idx = this.getIndexOfFood(food.getId());
     if (idx !== -1) {
       this.foods[idx] = food;
       this.selectFood(food);

@@ -12,12 +12,12 @@
       <button class="btn btn-warning" (click)="createNewFood()">New</button>
     </div>
     <div class="col-md-5 col-md-offset-2">
-      <contact-details
+      <food-details
         [food]="selectedFood"
         [createHandler]="addFood"
         [updateHandler]="updateFood"
         [deleteHandler]="deleteFood">
-      </contact-details>
+      </food-details>
     </div>
   </div>
   

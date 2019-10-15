@@ -4,8 +4,7 @@ import { ContactService } from '../food.service';
 
 @Component({
   selector: 'food-details',
-  templateUrl: './food-details.component.html',
-  styleUrls: ['./food-details.component.css']
+  templateUrl: './food-details.component.html'
 })
 
 export class FoodDetailsComponent {
@@ -18,7 +17,7 @@ export class FoodDetailsComponent {
   @Input()
   deleteHandler: Function;
 
-  constructor (private contactService: ContactService) {}
+  constructor(private contactService: ContactService) {}
 
   createFood(food: Food) {
     this.contactService.createFood(food).then((newFood: Food) => {
@@ -32,8 +31,8 @@ export class FoodDetailsComponent {
     });
   }
 
-  deleteFood(foodId: String): void {
-    this.contactService.deleteFood(foodId).then((deletedFoodId: String) => {
+  deleteFood(foodId: string): void {
+    this.contactService.deleteFood(foodId).then((deletedFoodId: string) => {
       this.deleteHandler(deletedFoodId);
     });
   }

@@ -6,7 +6,7 @@ var app = express();
 app.use(bodyParser.json());
 
 //Initialize variables for connection
-let SqlHost = '192.168.1.115'
+let SqlHost = 'rekkening.eu'
 let SqlUser = 'root'
 let SqlPass = 'Ihan vitun salainen'
 let SqlDB = 'pang'
@@ -33,9 +33,22 @@ var server = app.listen(process.env.PORT || 8080, function () {
     console.log("App now running on port", port);
 });
 
-app.get('/list', function (req, res) {
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(bodyParser.json());
+
+app.get('/api/foods/all', function (req, res) {
   connection.query('SELECT * FROM grocery_list', function (error, results, fields) {
       if (error) throw error;
       return res.send({ error: false, data: results, message: 'grocery list.' });
   });
+});
+app.post('/api/foods/new', function(req, res){
+  values= [['',''],['',req.body.food]];
+  console.log(req.body.food);
+});
+app.post('/api/foods/delete', function(req, res){
+  console.log(req.body);
+  console.log(req.body.key1);
 });
