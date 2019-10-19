@@ -4,7 +4,7 @@ import { ContactService } from '../food.service';
 import { FoodDetailsComponent } from '../food-details/food-details.component';
 
 @Component({
-  selector: 'food-list',
+  selector: 'app-food-list',
   templateUrl: './food-list.component.html',
   providers: [ContactService]
 })
@@ -19,7 +19,7 @@ export class FoodListComponent implements OnInit {
   ngOnInit() {
      this.contactService
       .getFoods()
-      .then((foods: Food[]) => {return foods;});
+      .then((foods: Food[]) => { return foods; });
   }
 
   private getIndexOfFood = (foodId: string) => {

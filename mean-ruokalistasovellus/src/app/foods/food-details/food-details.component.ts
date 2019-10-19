@@ -3,7 +3,7 @@ import { Food } from '../food';
 import { ContactService } from '../food.service';
 
 @Component({
-  selector: 'food-details',
+  selector: 'app-food-details',
   templateUrl: './food-details.component.html'
 })
 

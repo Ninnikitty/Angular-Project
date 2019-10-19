@@ -44,9 +44,19 @@ app.get('/api/foods/all', function (req, res) {
       return res.send({ error: false, data: results, message: 'grocery list.' });
   });
 });
+
 app.post('/api/foods/new', function(req, res){
-  values= [['',''],['',req.body.food]];
-  console.log(req.body.food);
+  connection.query('SELECT MAX(id) as moti FROM grocery_list;', function (error, results, fields) {
+    if (error) throw error;
+    console.log('Eh: ' + results[0].moti);
+    var values = [results[0].moti+1, req.body.food];
+    console.log('values: ' + values)
+    connection.query('INSERT INTO grocery_list (`id`, `item`) VALUES ?;', values, function (error, results, fields) {
+      if (error) throw error;
+
+    });
+  });
+  
 });
 app.post('/api/foods/delete', function(req, res){
   console.log(req.body);
