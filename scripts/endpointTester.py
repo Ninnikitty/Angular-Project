@@ -1,6 +1,10 @@
 import requests
-url = 'http://192.168:8080/api/foods/new'
-payload = {'key1': 'value1', 'key2': 'value2'}
+url = 'http://localhost:8080/api/foods/delete'
+payloadForPush = {'food': ['nakki', 'makkara']}
+payload = {
+    'id': '8',
+    'food':'makkara'
+    }
 headers = {'Content-Type': 'application/json'}
 
 # POST with JSON 
