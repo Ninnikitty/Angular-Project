@@ -12,7 +12,7 @@
       </div>
       <button class="btn btn-primary" *ngIf="!food.getId()" (click)="createFood(food)">Create</button>
       <button class="btn btn-info" *ngIf="food.getId()" (click)="updateFood(food)">Update</button>
-      <button class="btn btn-danger" *ngIf="food.getId()" (click)="deleteFood(food._id)">Delete</button>
+      <button class="btn btn-danger" *ngIf="food.getId()" (click)="deleteFood(food.getName())">Delete</button>
     </form>
   </div>
   

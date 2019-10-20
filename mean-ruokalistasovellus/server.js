@@ -6,7 +6,7 @@ var app = express();
 app.use(bodyParser.json());
 
 //Initialize variables for connection
-let SqlHost = 'rekkening.eu'
+let SqlHost = '127.0.0.1'
 let SqlUser = 'root'
 let SqlPass = 'Ihan vitun salainen'
 let SqlDB = 'pang'
@@ -44,11 +44,49 @@ app.get('/api/foods/all', function (req, res) {
       return res.send({ error: false, data: results, message: 'grocery list.' });
   });
 });
+
 app.post('/api/foods/new', function(req, res){
-  values= [['',''],['',req.body.food]];
-  console.log(req.body.food);
+  connection.query('SELECT MAX(id) as moti FROM grocery_list;', function (error, results, fields) {
+    if (error) throw error;
+
+    //Ready array for foods to push and get the current highest index in the database
+    var values = new Array();
+    var ind = results[0].moti;
+
+    //Fill the array to push to the db
+    var bod = req.body.food;
+    bod.forEach(food => {
+      ind = ind + 1;
+      values.push([ind, food]);
+    });
+
+    //Push to db
+    connection.query('INSERT INTO grocery_list (id, item) VALUES ?;', [values], function (error, results, fields) {
+      if (error) {
+        console.log('this.sql', this.sql); //command/query
+        console.log(values);
+        console.log("ERROR");
+        console.log(error);
+        return;
+    }
+    });
+    console.log('Items ' + values + ' pushed to the DB!');
+  });
+  
 });
+
 app.post('/api/foods/delete', function(req, res){
-  console.log(req.body);
-  console.log(req.body.key1);
+  console.log('doing delete for...' + req.body.id + ' ' + req.body.food);
+  var id = req.body.id;
+  var item = req.body.food;
+
+
+  connection.query('DELETE FROM grocery_list WHERE id=? AND item=?;', [id,item], function (error, results, fields) {
+    if (error) {
+      console.log('this.sql', this.sql); //command/query
+      console.log("ERROR");
+      console.log(error);
+      return;
+  }
+  });
 });
