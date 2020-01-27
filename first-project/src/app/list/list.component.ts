@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import * as _ from 'underscore';
 
 @Component({
   selector: 'app-list',
@@ -7,15 +6,15 @@ import * as _ from 'underscore';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  item  = '';
+  item = '';
   list = [];
   constructor() {}
 
-  addItem(){
-    this.list.push(this.item);
+  addItem(item){
+    this.list.push(item);
   }
-  removeItem(addedItem){
-    this.list = _.without(this.list, addedItem);
+  removeItem(){
+    this.list.pop();
   }
 
   ngOnInit() {}
