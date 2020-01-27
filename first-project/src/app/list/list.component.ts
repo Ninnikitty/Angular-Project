@@ -8,7 +8,17 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  list: any;
+  constructor() {
+    this.list ={
+      item: [
+        'uwu',
+        'owo',
+        'ono'
+      ]
+    };
+
+   }
 
   ngOnInit() {
   }
