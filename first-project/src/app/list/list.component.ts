@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
+import * as _ from 'underscore';
 
 @Component({
   selector: 'app-list',
@@ -7,27 +7,16 @@ import { MatCardModule } from '@angular/material/card';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
+  item  = '';
+  list = [];
+  constructor() {}
 
-  list: any;
-  constructor() {
-    this.list ={
-      item: [
-        'uwu',
-        'owo',
-        'ono'
-      ]
-    };
-   }
-   
-   onClickMeItem(){
-    
+  addItem(){
+    this.list.push(this.item);
+  }
+  removeItem(addedItem){
+    this.list = _.without(this.list, addedItem);
   }
 
-   removeItem(item){
-    let index = this.list.indexOf(item);
-    this.list.splice(index,1);
-}
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

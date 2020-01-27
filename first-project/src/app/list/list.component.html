@@ -1,6 +1,12 @@
-<!-- Input with add button -->
-<p>Lisää tarvittava ruoka tai tavara ostoslistaan</p>
-<input matInput type="text" placeholder="Syötä tuote"> <button mat-raised-button (click)="onClickMeItem()">Lisää tuote</button>
+<!--Text of add product-->
+<div>
+  <p>Lisää tarvittava ruoka tai tavara ostoslistaan</p>
+</div>
+<!--Input with add button-->
+<form name="itemFrm">
+  <input type="text" name="addItem" [(ngModel)]="item" placeholder="Syötä tuote"/> 
+  <button mat-raised-button ng-click="addItem()">Lisää tuote</button>
+</form>
 <!-- List with delete button -->
 <div>
   <mat-list role="list">

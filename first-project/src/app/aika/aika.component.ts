@@ -12,7 +12,7 @@ export class AikaComponent implements OnInit {
   constructor() { 
     setInterval( () => {
       let currentDate = new Date();
-      this.aikaViesti = currentDate.toDateString() + '' + currentDate.toLocaleTimeString();
+      this.aikaViesti = currentDate.toDateString() + ' ' + currentDate.toLocaleTimeString();
     } , 1000);
   }
 
