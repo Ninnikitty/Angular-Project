@@ -9,11 +9,13 @@ import {MatCardModule} from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import {MatListModule} from '@angular/material/list'; 
 import { MatInputModule, MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
+import { AikaComponent } from './aika/aika.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListComponent
+    ListComponent,
+    AikaComponent
   ],
   imports: [
     BrowserModule,

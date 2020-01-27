@@ -1,5 +1,22 @@
-<h1>Ruoka/Tavara muistilista</h1>
-<!-- Input with add button -->
-<input matInput placeholder="Input"> <button mat-raised-button>Add item</button>
-<!-- List with delete button -->
-<app-list></app-list>
+<!-- Toolbar-->
+<div class="toolbar" role= "banner">
+    <div class="spacer"></div>
+    <b>Ruoka/Tavara ostoslista</b>
+    <div class="spacer1"></div>
+    <app-aika></app-aika>
+</div>
+
+<!--Sivun sisältö-->
+<div class="listcontent">
+    <!-- Input with add button -->
+    <p>Lisää tarvittava ruoka tai tavara ostoslistaan</p>
+    <input matInput placeholder="Input"> <button mat-raised-button>Lisää tuote</button>
+    <!-- List with delete button -->
+    <app-list></app-list>
+</div>
+
+ <!-- Footer -->
+<footer>
+<i>Made by Niina and Olli</i> 
+</footer>
+  
