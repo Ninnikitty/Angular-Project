@@ -1,9 +1,13 @@
+<!-- Input with add button -->
+<p>Lisää tarvittava ruoka tai tavara ostoslistaan</p>
+<input matInput type="text" placeholder="Syötä tuote"> <button mat-raised-button (click)="onClickMeItem()">Lisää tuote</button>
+<!-- List with delete button -->
 <div>
   <mat-list role="list">
     <mat-card *ngFor="let item of list.item">
         <mat-list-item >{{ item }}
             <div class="spacer"></div>
-        <button mat-raised-button>Poista tuote</button>
+        <button mat-raised-button (click)="removeItem(item)">Poista tuote</button>
         </mat-list-item>
       </mat-card>
   </mat-list>
