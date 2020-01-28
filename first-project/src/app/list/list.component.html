@@ -10,7 +10,7 @@
 <!-- List with delete button -->
 <div>
   <mat-list role="list">
-    <mat-card *ngFor="let item of list.item">
+    <mat-card *ngFor="let item of list">
         <mat-list-item >{{ item }}
             <div class="spacer"></div>
         <button mat-raised-button (click)="removeItem(item)">Poista tuote</button>
